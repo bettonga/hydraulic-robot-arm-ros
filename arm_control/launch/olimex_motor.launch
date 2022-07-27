@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="motor_node" pkg="arm_control" type="motor_node.py"/>
+
+</launch>

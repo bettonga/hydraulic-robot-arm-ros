@@ -1,0 +1,8 @@
+<launch>
+
+  <node name="IK_node" pkg="arm_control" type="IK_node.py"/>
+  <node name="traj_node" pkg="arm_control" type="traj_node.py"/>
+  <!-- <node name="arm_viz" pkg="arm_control" type="arm_viz.py"/> -->
+  <node name="joy_node" pkg="joy" type="joy_node"/>
+
+</launch>
