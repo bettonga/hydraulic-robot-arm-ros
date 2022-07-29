@@ -14,7 +14,7 @@ from std_msgs.msg import Int16MultiArray
 
 
 # Upper arm length
-A 	= 250
+A 	= 260
 # Forearm length
 B 	= 250
 

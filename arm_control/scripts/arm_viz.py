@@ -17,7 +17,7 @@ from arm_control.msg import ArmTip2D
 
 
 # Upper arm length
-A 	= 250
+A 	= 260
 
 # Forearm length
 B 	= 250

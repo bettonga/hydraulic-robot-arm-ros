@@ -15,7 +15,7 @@ from sensor_msgs.msg import Joy
 from std_msgs.msg import Int16MultiArray
 
 # Upper arm length
-A 	= 250
+A 	= 260
 # Forearm length
 B 	= 250
 
@@ -125,7 +125,7 @@ def lines(dl=10):
 	return A
 
 def main():
-	dl = 50
+	dl = 5
 	waypt = lines(dl=dl)
 	len=np.shape(waypt)[1]
 	ε = 20
@@ -135,9 +135,9 @@ def main():
 		tipxy.y = int(waypt[1,i])
 		tipxy.R = int(0)
 		tip_xy_goal.publish(tipxy)
-		rospy.loginfo("i: %d | dist: %f", i, math.dist([posX,posY],waypt[:,i]))
-		if math.dist([posX,posY],waypt[:,i])<ε:
-			i = (i+1)%len
+		# rospy.loginfo("i: %d | dist: %f", i, math.dist([posX,posY],waypt[:,i]))
+		# if math.dist([posX,posY],waypt[:,i])<ε:
+		i = (i+1)%len
 		rate.sleep()
 
 
@@ -150,7 +150,7 @@ if __name__ == '__main__':
 		tip_xy_goal = rospy.Publisher('tip_xy_goal', ArmTip2D, queue_size=10)
 		tipxy = ArmTip2D()	# [x, y, r (, speed, accel)]
 
-		rate = rospy.Rate(100) # 10hz
+		rate = rospy.Rate(5) # 10hz
 
 		main()
 
